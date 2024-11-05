@@ -35,13 +35,10 @@ A comprehensive management system for tracking and handling chocolate ingredient
 
 ## ⚙️ Installation
 
-Follow these steps to set up the application locally:
+Steps to set up the application locally
 
 1. Clone the repository
    "git clone https://github.com/Vaishnavi8507/L7_assesment"
-
-Steps to set up the application locally
-
 
 2. Set up the virtual envinronment:
    python -m venv venv,
