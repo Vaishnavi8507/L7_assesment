@@ -108,22 +108,32 @@ class FictionalChocoHouse:
             conn.close()
             
     #---FLAVOUR INGREDIENT------#
-    def link_flavour_ingredient(self,ingredient_id,flavour_id):
+    def link_flavour_ingredient(self, ingredient_id, flavour_id):
         """Link a flavour to an ingredient"""
-        sql="""INSERT INTO flavour_ingredients(ingredient_id,flavour_id) VALUES(?,?)"""
-        conn=self.connection()
+        sql = """INSERT INTO flavour_ingredients(ingredient_id, flavour_id) VALUES(?, ?)"""
+        conn = self.connection()
         try:
-            cursor=conn.cursor()
-            cursor.execute(sql,(ingredient_id,flavour_id))
+            cursor = conn.cursor()
+            # Check if the IDs exist
+            cursor.execute("SELECT * FROM ingredients WHERE id=?", (ingredient_id,))
+            if cursor.fetchone() is None:
+                print(f"Ingredient ID {ingredient_id} does not exist.")
+                return False
+            cursor.execute("SELECT * FROM flavours WHERE id=?", (flavour_id,))
+            if cursor.fetchone() is None:
+                print(f"Flavour ID {flavour_id} does not exist.")
+                return False
+            
+            cursor.execute(sql, (ingredient_id, flavour_id))
             conn.commit()
-            print(f"Successfully linked flavour{flavour_id} with ingredient:{ingredient_id}")
+            print(f"Successfully linked flavour {flavour_id} with ingredient: {ingredient_id}")
             return True
         except Error as e:
-            print(f"Error linking flavour ingredient:{e}")
+            print(f"Error linking flavour ingredient: {e}")
             return False
         finally:
             conn.close()
-            
+        
     def get_flavour_ingredients(self,flavour_id):
         """Retrieve all ingredients for a specific flavour"""
         sql="""
@@ -193,13 +203,52 @@ class FictionalChocoHouse:
         finally:
             conn.close()
             
-
-    
+     #----DELETE FLAVOUR----#
+    def delete_flavour(self, flavour_id):
+        """Delete a flavour from the DB"""
+        sql = """DELETE FROM flavours WHERE id = ?"""
+        conn = self.connection()
+        try:
+            cursor = conn.cursor()
+            cursor.execute(sql, (flavour_id,))
+            conn.commit()
+            print(f"Successfully deleted flavour with ID: {flavour_id}")
+            return True
+        except Error as e:
+            print(f"Error deleting flavour: {e}")
+            return False
+        finally:
+            conn.close()
             
-
-        
-        
-    
-    
-    
-    
+    def delete_ingredient(self, ingredient_id):
+        """Delete an ingredient from the DB"""
+        sql = """DELETE FROM ingredients WHERE id = ?"""
+        conn = self.connection()
+        try:
+            cursor = conn.cursor()
+            cursor.execute(sql, (ingredient_id,))
+            conn.commit()
+            print(f"Successfully deleted ingredient with ID: {ingredient_id}")
+            return True
+        except Error as e:
+            print(f"Error deleting ingredient: {e}")
+            return False
+        finally:
+            conn.close()
+            
+    def delete_suggestion(self, suggestion_id):
+        """Delete a customer suggestion from the DB"""
+        sql = """DELETE FROM suggestions WHERE id = ?"""
+        conn = self.connection()
+        try:
+            cursor = conn.cursor()
+            cursor.execute(sql, (suggestion_id,))
+            conn.commit()
+            print(f"Successfully deleted suggestion with ID: {suggestion_id}")
+            return True
+        except Error as e:
+            print(f"Error deleting suggestion: {e}")
+            return False
+        finally:
+            conn.close()
+            
