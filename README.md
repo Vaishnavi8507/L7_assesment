@@ -32,8 +32,8 @@ Steps to set up the application locally
    - cd app
 
 2. Set up the virtual envinronment:
-   python -m venv venv
-   `venv\Scripts\activate -for windows
+   python -m venv venv,
+   venv\Scripts\activate -for windows
 
 3. Install the required packages:
    pip install -r requirements.txt
