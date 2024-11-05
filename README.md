@@ -39,7 +39,7 @@ Steps to set up the application locally
    pip install -r requirements.txt
 
 4. Run the application:
-   cd app\n
+   cd app
    streamlit run streamlit_app.py
 
 5. Open the browser and navigate to:
