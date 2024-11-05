@@ -31,15 +31,16 @@ Steps to set up the application locally
 
    - cd app
 
-2. Set up the virtual envinronment
+2. Set up the virtual envinronment:
    python -m venv venv
    `venv\Scripts\activate -for windows
 
-3. Install the required packages
+3. Install the required packages:
    pip install -r requirements.txt
 
-4. Run the application
-   cd app
+4. Run the application:
+   cd app\n
    streamlit run streamlit_app.py
 
-5. Open the browser and navigate to http://localhost:8502
+5. Open the browser and navigate to:
+    http://localhost:8502
