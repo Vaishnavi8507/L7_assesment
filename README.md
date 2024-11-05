@@ -1,41 +1,53 @@
-#Fictional Chocolate House Management System
-#Author: [Vaishnavi Jamadarkhana]
-#Date: 2024-11-05
+# 🍫 Fictional Chocolate House Management System
+
+A comprehensive management system for tracking and handling chocolate ingredients, flavors, and customer suggestions!
+
+### 📋 *Author*: [Vaishnavi Jamadarkhana]  
+### 📅 *Date*: 2024-11-05
 
 
-#FEATURES
+#🌟 Features
 
-Add Ingredients
-Manage Ingredients
-Update Ingredient Quantity
-Delete Ingredient
+- *Ingredients Management*  
+  - Add Ingredients  
+  - Manage Ingredients  
+  - Update Ingredient Quantity  
+  - Delete Ingedients 
 
-Add Flavours
-View Flavour
-Delete Flavour
+- *Flavor Management*  
+  - Add Flavors  
+  - View Flavors  
+  - Delete Flavors  
 
-Customer Suggestions
+- *Customer Suggestions*  
+  - Collect and view customer suggestions
 
-#TECHSTACK
----PYTHON- for backend development
----STREAMLIT- for building web application
----SQLite-- database to store and manage the data
----DOCKER- for containerization,easy deployment
+---
 
-#INSTALLATION
+## 🛠️ Tech Stack
+
+- *Python* - Backend development
+- *Streamlit* - Web application framework
+- *SQLite* - Database for data storage and management
+- *Docker* - Containerization for easy deployment
+
+---
+
+## ⚙️ Installation
+
+Follow these steps to set up the application locally:
+
+1. Clone the repository
+   "git clone https://github.com/Vaishnavi8507/L7_assesment"
 
 Steps to set up the application locally
 
-1. Clone the repo:
-   "git clone https://github.com/Vaishnavi8507/L7_assesment"
-
-   - cd app
 
 2. Set up the virtual envinronment:
    python -m venv venv,
    venv\Scripts\activate -for windows
 
-3. Install the required packages:
+3. Install the required packags:
    pip install -r requirements.txt
 
 4. Run the application:
